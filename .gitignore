@@ -1,0 +1,5 @@
+.local/
+auto-save-list/
+server/
+eshell/
+.gitconfig_personal
