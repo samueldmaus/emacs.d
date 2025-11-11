@@ -15,11 +15,17 @@
 	     )
 
 ;; list of packages to install
-(setq package-selected-packages '()
+(setq package-selected-packages '(magit
+				  )
       )
 
 ;; if packages are not found install them
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
   (mapc #'package-install package-selected-packages)
+  )
+
+;; magit
+(use-package magit
+  :ensure t
   )
