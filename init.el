@@ -7,6 +7,13 @@
  auto-save-default nil
  )
 
+(tool-bar-mode -1)
+
+;; attr setting
+(set-face-attribute 'font-lock-string-face nil
+		    :foreground "orange red"
+		    )
+
 ;; set up package.el to work with MELPA
 (require 'package)
 (package-initialize)
@@ -15,7 +22,10 @@
 	     )
 
 ;; list of packages to install
-(setq package-selected-packages '(magit
+(setq package-selected-packages '(rg
+				  ag
+				  magit
+				  projectile
 				  )
       )
 
@@ -25,7 +35,30 @@
   (mapc #'package-install package-selected-packages)
   )
 
+;; ripgrep
+(require 'rg)
+
+;; ag
+(require 'ag)
+
+;; projectile
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+	      ("C-c p" . projectile-command-map)
+	      )
+  )
+
 ;; magit
 (use-package magit
   :ensure t
   )
+
+
+
+
+
+
+

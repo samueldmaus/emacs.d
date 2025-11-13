@@ -4,3 +4,4 @@ server/
 eshell/
 elpa/
 .gitconfig_personal
+projectile-*
