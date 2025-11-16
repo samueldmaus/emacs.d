@@ -12,6 +12,13 @@
 (tab-bar-mode 1)
 (global-tab-line-mode 1)
 (tab-bar-history-mode 1)
+(global-visual-line-mode 1)
+(toggle-truncate-lines 1)
+(global-display-line-numbers-mode 1)
+(column-number-mode 1) ;; display (line, column) in modeline
+(global-superword-mode 1) ;; treats snake_case as one word
+(global-subword-mode 1) ;; treats CamelCase as separate words
+(show-paren-mode 1)
 
 ;; attr setting
 (set-face-attribute 'font-lock-string-face nil
@@ -77,10 +84,3 @@
 (use-package magit
   :ensure t
   )
-
-
-
-
-
-
-
