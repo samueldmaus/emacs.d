@@ -19,11 +19,7 @@
 (global-superword-mode 1) ;; treats snake_case as one word
 (global-subword-mode 1) ;; treats CamelCase as separate words
 (show-paren-mode 1)
-
-;; attr setting
-(set-face-attribute 'font-lock-string-face nil
-		    :foreground "orange red"
-		    )
+(electric-pair-mode 1)
 
 ;; global key settings
 (global-set-key [remap list-buffers] 'ibuffer)
@@ -69,6 +65,17 @@
 (setq-default confirm-nonexistent-file-or-buffer nil)
 (setq ido-ignore-extensions t)
 (ido-mode 1)
+
+;; eglot
+(use-package eglot
+  :ensure t
+  :defer t
+  :config
+  (add-to-list 'eglot-server-programs '((c-mode c++-mode) "clangd"))
+  :hook
+  ((c-mode . eglot-ensure)
+   (c++-mode . eglot-ensure))
+  )
 
 ;; projectile
 (use-package projectile
