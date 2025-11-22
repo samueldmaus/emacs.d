@@ -5,6 +5,7 @@
  visible-bell t
  make-backup-files nil
  auto-save-default nil
+ isearch-allow-motion t ;; allow M-<, M->, C-v, M-v to work when in isearch
  )
 (tool-bar-mode -1) ;; remove tool bar
 (repeat-mode 1)
@@ -20,6 +21,7 @@
 (global-subword-mode 1) ;; treats CamelCase as separate words
 (show-paren-mode 1)
 (electric-pair-mode 1)
+(delete-selection-mode 1)
 
 ;; global key settings
 (global-set-key [remap list-buffers] 'ibuffer)
@@ -91,3 +93,15 @@
 (use-package magit
   :ensure t
   )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(isearch-allow-motion t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
